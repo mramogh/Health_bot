@@ -125,18 +125,18 @@ Good night! 🌙"""
 
 # ── Command handlers ──────────────────────────────────────────────────────────
 async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    chat_id = update.effective_chat.id
     await update.message.reply_text(
-        f"👋 Hey Amogh! Your health bot is live!\n\n"
-        f"Here's what I can do:\n"
-        f"📸 Send a food photo → I'll calculate calories\n"
-        f"🥘 Type 'cook: [ingredients]' → I'll suggest diabetic-friendly meals\n"
+        f"Hey Amogh! Your health bot is live! 💪\n\n"
+        f"Here is what I can do:\n"
+        f"📸 Send a food photo → I will calculate calories\n"
+        f"🥘 Type 'cook: [ingredients]' → I will suggest diabetic-friendly meals\n"
         f"💧 Type 'water' → Log a glass of water\n"
         f"✅ Type 'done' → Log today's workout\n"
         f"📊 Type 'summary' → See today's stats\n"
         f"❓ Ask me anything about diet or fitness!\n\n"
-        f"Your chat ID is: `{update.effective_chat.id}`\n"
-        f"Add this to your CHAT_ID env variable!",
-        parse_mode="Markdown"
+        f"Your chat ID is: {chat_id}\n"
+        f"Make sure this is saved as your CHAT_ID in Railway!"
     )
 
 async def handle_text(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
